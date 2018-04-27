@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>离线缓存示例</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<h4>使用Service Worker缓存两张图片，一个css文件，一个js文件，和一个html文件。</h4>
+<p><img src="./static/001.jpg" alt="示意图片" width="256" height="192"></p>
+<p><img src="./static/002.jpg" alt="示意图片" width="256" height="192"></p>
+<script src="./js/jquery.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('./service-worker.js')
+                .then(function() { console.log('Service Worker Registered'); });
+    }
+</script>
+</body>
+</html>
